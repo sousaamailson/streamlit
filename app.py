@@ -1,5 +1,5 @@
 import streamlit as st
-import plotly.express as px
+import plotly as px
 import pandas as pd
 
 # Criando dados de exemplo
@@ -16,9 +16,3 @@ fig = px.scatter(dados, x='X', y='Y', title='Gráfico de Dispersão')
 
 # Exibindo o gráfico no Streamlit
 st.plotly_chart(fig)
-
-
-
-
-
-#"C:\Users\amailson.sousa\OneDrive - ARG\Área de Trabalho\app-streamlit.py"
