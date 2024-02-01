@@ -1,4 +1,10 @@
 import streamlit as st
-import pandas as pd
 
-print("Hello Streamlit")
+# Título do aplicativo
+st.title('Meu App Streamlit')
+
+# Frase para exibir
+frase = "Olá, bem-vindo ao meu aplicativo Streamlit!"
+
+# Imprimir a frase no aplicativo
+st.write(frase)
