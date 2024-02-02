@@ -1,37 +1,18 @@
 import streamlit as st
-from streamlit_lightweight_charts import renderLightweightCharts
+import plotly as px
+import pandas as pd
 
-chartOptions = {
-    "layout": {
-        "textColor": 'black',
-        "background": {
-            "type": 'solid',
-            "color": 'white'
-        }
-    }
-}
+# Criando dados de exemplo
+dados = pd.DataFrame({
+    'X': [1, 2, 3, 4, 5],
+    'Y': [10, 11, 12, 13, 14]
+})
 
-seriesAreaChart = [{
-    "type": 'Area',
-    "data": [
-        { "time": '2018-12-22', "value": 32.51 },
-        { "time": '2018-12-23', "value": 31.11 },
-        { "time": '2018-12-24', "value": 27.02 },
-        { "time": '2018-12-25', "value": 27.32 },
-        { "time": '2018-12-26', "value": 25.17 },
-        { "time": '2018-12-27', "value": 28.89 },
-        { "time": '2018-12-28', "value": 25.46 },
-        { "time": '2018-12-29', "value": 23.92 },
-        { "time": '2018-12-30', "value": 22.68 },
-        { "time": '2018-12-31', "value": 22.67 },
-    ],
-    "options": {}
-}]
+# Título do aplicativo
+st.title('Exemplo de Gráfico com Streamlit')
 
-st.subheader("Area Chart with Watermark")
-renderLightweightCharts( [
-    {
-        "chart": chartOptions,
-        "series": seriesAreaChart,
-    }
-], 'area')
+# Criando um gráfico de dispersão com Plotly Express
+fig = px.scatter(dados, x='X', y='Y', title='Gráfico de Dispersão')
+
+# Exibindo o gráfico no Streamlit
+st.plotly_chart(fig)
